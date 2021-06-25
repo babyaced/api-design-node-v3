@@ -1,7 +1,11 @@
 import { Router } from 'express'
+const controller = (req, res) => {
+  res.send({ message: 'hello' })
+}
 
 const router = Router()
 
+// /api/item
 router
   .route('/')
   .post((req, res) => {
@@ -17,6 +21,7 @@ router
     res.send({ deleted: true })
   })
 
+// /api/item/:id
 router
   .route('/:id')
   .post((req, res) => {
